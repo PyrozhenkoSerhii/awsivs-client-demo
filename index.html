@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>AWSIVS Demo</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>AWSIVS Demo</h2>
+    <div id="start-controls">
+      <input id="stream-key-input" type="text" placeholder="Stream Key" value="f54b0d72-f0f2-4c9f-b910-781d1b6379e0" >
+      <button id="start-btn">Start Streaming</button>
+    </div>
+
+    <div id="end-controls" class="hide">
+      <button id="stop-btn">Stop Streaming</button>
+    </div>
+
+    <br>
+
+    <video playsinline autoplay muted></video>
+  </div>
+  <script src="./vendor/axios.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

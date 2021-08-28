@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   startBtn.addEventListener('click', async () => {
+    console.log("Starting...");
     try {
       const streamKeyInput = document.getElementById('stream-key-input');
       const streamKey = streamKeyInput.value;
@@ -99,9 +100,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   stopBtn.addEventListener('click', async () => {
+    console.log("Stoping...");
     try {
       mediaRecorder.stop();
       toggleControls(false);
+      
+      mediaRecorder = await initCamera(constraints, video)
+      console.log("> Media recorder and camera reinitialized after stop")
     } catch (err) {
       alert(err);
     }
@@ -109,6 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     mediaRecorder = await initCamera(constraints, video);
+    console.log("> Media recorder and camera initialized")
   } catch (err) {
     console.log(err);
   }
